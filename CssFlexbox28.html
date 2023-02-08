@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+    <style>
+        .container {
+            height: 544px;
+            width: 100%;
+            border: 2px solid darkblue;
+            /* Now to create flexbox we have to create the display:flex  */
+            /* Initialize the container as flex box */
+            display: flex;
+            flex-direction: row;
+
+            /* Flex Properties for flex container */
+
+            /* by default the flex-direction is row only */
+            /* flex-direction: row; */
+            /* flex-direction: column; */
+            /* flex-direction: column; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column-reverse; */
+
+            /* flex-wrap helps in wrapping up of element while making the site responsive */
+            /* by default it is flex-wrap: nowrap; */
+            /* flex-wrap: wrap; */
+            /* flex-wrap: wrap-reverse; */
+            /* flex-wrap: nowrap; */
+
+            /* To bring the content in center of the website  */
+            /* justify-content will justify the content in horizontal direction */
+            /* justify-content: center; */
+            /* Another property of justify-content to bring the space between the elements */
+            /* justify-content: space-between; */
+            /* To show the spacing between the boxes evenly */
+            /* justify-content: space-evenly; */
+            /* To bring the space evenly arount the box evenly on both the side left and right both */
+            /* justify-content: space-around; */
+
+
+            /* if you want to write the property of flex direction and wrap as together use property flex-flow */
+            /* flex-flow shorthand */
+            /* flex-flow: row-reverse wrap; */
+
+            /* align-items will justify the content in vertical direction */
+            /* align-items: center; */
+            /*brings the elements in the down side of the container */
+            /* align-items: flex-end; */
+            /* bring the box in the upside direction of the container */
+            /* align-items: start; */
+            /* to stretch the elments of box evenly inside container */
+            /* vertically even space we are able to create using align-items: stretch propertyh */
+            /* align-items: stretch; */
+        }
+
+        .item {
+            background-color: tomato;
+            border: 2px solid darkmagenta;
+            margin: 10px;
+            padding: 3px;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* remember to use the flex properties on items wise and not class wise otherwise you will be in trouble */
+        #item-1 {
+            /* Flex properties for flex item */
+            /* the bigger the order of box will be displayed first.in container */
+            /* You can see the changes as per the order of box in the css flex box of the container */
+            order: 2;
+            /* flex-grow will enhance the box size as per the order of their number */
+            /* flex-grow: 3; */
+            /* flex-shrink property will shrink the property as per the order of their number */
+            /* flex-shrink: 2; */
+
+        }
+
+        #item-3 {
+            order: 40;
+            /* flex-grow: 2;
+            flex-shrink: 3; */
+
+            /* when flex-direction is set to row flex-basis it will control width */
+            /* when flex-direction is set to column flex-basis it will control height */
+            flex-basis: 160px;
+            /* To bring the box in the right most end. */
+            align-self: flex-end;
+            align-self: flex-start;
+            
+        }
+        #item-2{
+            flex: 2 2 230px;
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is Shubham showing CSS Flexbox Tutorial</h1>
+    <!-- always remember to keep the end of div of container class in the last and it is written only once as class -->
+    <div class="container">
+        <!-- div.item#item-$*6 -->
+        <!-- shortcut to write the selector and class in one line using incremental $ used. -->
+        <div class="item" id="item-1">First box</div>
+        <div class="item" id="item-2">Second box</div>
+        <div class="item" id="item-3">Third box</div>
+        <!-- <div class="item" id="item-4">Fourth box</div>
+        <div class="item" id="item-5">Fifth box</div>
+        <div class="item" id="item-6">Sixth box</div> -->
+    </div>
+</body>
+
+</html>
